@@ -1,0 +1,3 @@
+# Hello Mongo
+
+Learning Mongo.
