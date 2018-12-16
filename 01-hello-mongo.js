@@ -17,13 +17,13 @@ MongoClient.connect(urlConn, { useNewUrlParser: true }, (err, dbconn) => {
 
   console.log(`Connection: OK`, dbconn);
   const db = dbconn.db(`${process.env.DB_NAME}`);
-  db.collection('users').find({}).toArray((err, result) => {
+  db.collection(`${process.env.COLLECTION}`).find({}).toArray((err, result) => {
     if (err) {
-      console.log('users find: KO');
+      console.log(`${process.env.COLLECTION} find: KO`);
       return err;
     }
 
-    console.log('users find: OK', result);
+    console.log(`${process.env.COLLECTION} find: OK`, result);
   });
 
   dbconn.close();
